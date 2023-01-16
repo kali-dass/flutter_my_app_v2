@@ -10,7 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text('Hello'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App with Scaffold'),
+        ),
+        body: Text('This is first test in boday of Scaffold'),
+      ),
     );
   }
 }
