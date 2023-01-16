@@ -22,9 +22,14 @@ class MyApp extends StatelessWidget {
           children: [
             Text('The Beverage would you like to have?'),
             ElevatedButton(onPressed: answerToQuestions, child: Text('Coffee')),
-            ElevatedButton(onPressed: answerToQuestions, child: Text('Tea')),
             ElevatedButton(
-                onPressed: answerToQuestions, child: Text('Carbonated Drink')),
+                onPressed: () => print('Tea Choosen'), child: Text('Tea')),
+            ElevatedButton(
+                onPressed: () {
+                  print('OMG this one');
+                  print('Carbonated Drink');
+                },
+                child: Text('Carbonated Drink')),
             ElevatedButton(onPressed: answerToQuestions, child: Text('Water')),
           ],
         ),
