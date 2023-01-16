@@ -14,7 +14,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My First App with Scaffold'),
         ),
-        body: Text('This is first test in boday of Scaffold'),
+        body: Column(
+          children: [
+            Text('The Question'),
+            ElevatedButton(onPressed: null, child: Text('Answer1')),
+            ElevatedButton(onPressed: null, child: Text('Answer2')),
+          ],
+        ),
       ),
     );
   }
