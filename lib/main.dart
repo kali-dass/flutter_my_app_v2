@@ -7,12 +7,20 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  var questionIndiex = 0;
+
   void answerToQuestions() {
-    print('Answer Choosen');
+    questionIndiex = questionIndiex + 1;
+    print(questionIndiex);
   }
 
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      'What Beverage would you like?',
+      'What laptop would you like?'
+    ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -20,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The Beverage would you like to have?'),
+            Text(questions[questionIndiex]),
             ElevatedButton(onPressed: answerToQuestions, child: Text('Coffee')),
             ElevatedButton(
                 onPressed: () => print('Tea Choosen'), child: Text('Tea')),
