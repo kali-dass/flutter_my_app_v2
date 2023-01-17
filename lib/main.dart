@@ -10,18 +10,18 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIndiex = 0;
+class _MyAppState extends State<MyApp> {
+  var _questionIndiex = 0;
 
-  void answerToQuestions() {
+  void _answerToQuestions() {
     setState(() {
-      questionIndiex = questionIndiex + 1;
+      _questionIndiex = _questionIndiex + 1;
     });
-    print(questionIndiex);
+    print(_questionIndiex);
   }
 
   @override
@@ -38,8 +38,9 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[questionIndiex]),
-            ElevatedButton(onPressed: answerToQuestions, child: Text('Coffee')),
+            Text(questions[_questionIndiex]),
+            ElevatedButton(
+                onPressed: _answerToQuestions, child: Text('Coffee')),
             ElevatedButton(
                 onPressed: () => print('Tea Choosen'), child: Text('Tea')),
             ElevatedButton(
@@ -48,7 +49,7 @@ class MyAppState extends State<MyApp> {
                   print('Carbonated Drink');
                 },
                 child: Text('Carbonated Drink')),
-            ElevatedButton(onPressed: answerToQuestions, child: Text('Water')),
+            ElevatedButton(onPressed: _answerToQuestions, child: Text('Water')),
           ],
         ),
       ),
