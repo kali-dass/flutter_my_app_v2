@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -20,7 +19,21 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionIndiex = 0;
 
+  static const _questions = [
+    {
+      'questionText': 'What Beverage would you like?',
+      'answers': ['Coffee', 'Tea', 'Carbonated Drink', 'Water']
+    },
+    {
+      'questionText': 'What laptop would you like?',
+      'answers': ['Dell', 'Mac', 'Custom', 'HP']
+    }
+  ];
+
   void _answerToQuestions() {
+    if (_questionIndiex < _questions.length) {
+      print('More Questions Left');
+    }
     setState(() {
       _questionIndiex = _questionIndiex + 1;
     });
@@ -29,33 +42,19 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    const questions = [
-      {
-        'questionText': 'What Beverage would you like?',
-        'answers': ['Coffee', 'Tea', 'Carbonated Drink', 'Water']
-      },
-      {
-        'questionText': 'What laptop would you like?',
-        'answers': ['Dell', 'Mac', 'Custom', 'HP']
-      }
-    ];
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My First App with Scaffold'),
         ),
-        body: Column(
-          children: [
-            Question(
-              (questions[_questionIndiex]['questionText'] as String),
-            ),
-            ...(questions[_questionIndiex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerToQuestions, answer);
-            }).toList(),
-          ],
-        ),
+        body: _questionIndiex < _questions.length
+            ? Quiz(_answerToQuestions, _questions, _questionIndiex)
+            : Center(
+                child: Text(
+                  'Well done',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
       ),
     );
   }
