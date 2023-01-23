@@ -47,11 +47,13 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Question(questions[_questionIndiex]),
-            Answer(_answerToQuestions),
-            Answer(_answerToQuestions),
-            Answer(_answerToQuestions),
-            Answer(_answerToQuestions),
+            Question(
+              (questions[_questionIndiex]['questionText'] as String),
+            ),
+            ...(questions[_questionIndiex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_answerToQuestions, answer);
+            }).toList(),
           ],
         ),
       ),
