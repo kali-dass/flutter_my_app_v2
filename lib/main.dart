@@ -30,8 +30,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What Beverage would you like?',
-      'What laptop would you like?'
+      {
+        'questionText': 'What Beverage would you like?',
+        'answers': ['Coffee', 'Tea', 'Carbonated Drink', 'Water']
+      },
+      {
+        'questionText': 'What laptop would you like?',
+        'answers': ['Dell', 'Mac', 'Custom', 'HP']
+      }
     ];
 
     return MaterialApp(
