@@ -48,7 +48,10 @@ class _MyAppState extends State<MyApp> {
           title: Text('My First App with Scaffold'),
         ),
         body: _questionIndiex < _questions.length
-            ? Quiz(_answerToQuestions, _questions, _questionIndiex)
+            ? Quiz(
+                answerQuestions: _answerToQuestions,
+                questions: _questions,
+                questionIndex: _questionIndiex)
             : Center(
                 child: Text(
                   'Well done',
