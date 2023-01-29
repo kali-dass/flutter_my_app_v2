@@ -18,6 +18,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndiex = 0;
+  var _totalScore = 0;
 
   static const _questions = [
     {
@@ -40,7 +41,9 @@ class _MyAppState extends State<MyApp> {
     }
   ];
 
-  void _answerToQuestions() {
+  void _answerToQuestions(int score) {
+    _totalScore += score;
+    print(_totalScore as int);
     if (_questionIndiex < _questions.length) {
       print('More Questions Left');
     }
