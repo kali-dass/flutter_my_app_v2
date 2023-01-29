@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_app_v2/results.dart';
 
 import './quiz.dart';
 
@@ -65,12 +66,7 @@ class _MyAppState extends State<MyApp> {
                 answerQuestions: _answerToQuestions,
                 questions: _questions,
                 questionIndex: _questionIndiex)
-            : Center(
-                child: Text(
-                  'Well done',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
+            : Result(_totalScore),
       ),
     );
   }
