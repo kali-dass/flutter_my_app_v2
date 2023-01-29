@@ -22,11 +22,21 @@ class _MyAppState extends State<MyApp> {
   static const _questions = [
     {
       'questionText': 'What Beverage would you like?',
-      'answers': ['Coffee', 'Tea', 'Carbonated Drink', 'Water']
+      'answers': [
+        {'text': 'Coffee', 'score': 5},
+        {'text': 'Tea', 'score': 4},
+        {'text': 'Carbonated Drink', 'score': 1},
+        {'text': 'Water', 'score': 10}
+      ]
     },
     {
       'questionText': 'What laptop would you like?',
-      'answers': ['Dell', 'Mac', 'Custom', 'HP']
+      'answers': [
+        {'text': 'Dell', 'score': 1},
+        {'text': 'Mac', 'score': 9},
+        {'text': 'Custom', 'score': 8},
+        {'text': 'HP', 'score': 2}
+      ]
     }
   ];
 
