@@ -34,7 +34,25 @@ class Result extends StatelessWidget {
             onPressed: resetQuiz,
             child: Text('Restart Quiz!'),
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red[500])))
+              backgroundColor: MaterialStateProperty.all(Colors.red[500]),
+            )),
+        TextButton(
+          onPressed: resetQuiz,
+          child: Text('Restart Quiz!'),
+          style:
+              //TextButton.styleFrom(primary: Colors.orange)
+              ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all(Colors.orange)),
+        ),
+        OutlinedButton(
+          onPressed: resetQuiz,
+          child: Text('Reset the Quiz!!'),
+          style:
+              //OutlinedButton.styleFrom(primary: Colors.orange)
+              ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  foregroundColor: MaterialStateProperty.all(Colors.white)),
+        )
       ],
     );
   }
